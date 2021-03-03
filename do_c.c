@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	do_c(va_list ap, fmtdata data)
+void	do_c(va_list ap, fmtdata *data)
 {
 	if (data.minus)
 		ft_putchar(va_arg(ap, int), data);

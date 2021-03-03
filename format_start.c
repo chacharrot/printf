@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	format_start(char *format, va_list ap, fmtdata data)
+void	format_start(char *format, va_list ap, fmtdata *data)
 {
 	int		i;
 
@@ -10,7 +10,7 @@ void	format_start(char *format, va_list ap, fmtdata data)
 		if (format[i] != '%')
 			{
 				write(1, &format[i], 1);
-				data.rev += 1;
+				data->rev += 1;
 				i++;
 			}
 		else if(format[i] == '%' && format[i + 1])

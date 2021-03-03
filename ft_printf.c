@@ -3,7 +3,7 @@
 int		ft_printf(char *format, ...)
 {
 	va_list		ap;
-	fmtdata		data;
+	fmtdata		*data;
 
 	va_start(ap, format);
 	data_set(data);
