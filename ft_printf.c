@@ -7,7 +7,7 @@ int		ft_printf(char *format, ...)
 
 	va_start(ap, format);
 	data_set(*data);
-	format_start(format, ap, *data);
+	format_start(format, ap, data);
 	va_end(ap);
 	return (data->rev);
 }

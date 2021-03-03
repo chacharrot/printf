@@ -8,7 +8,7 @@ int		format_check(char *format, va_list ap, fmtdata *data)
 	while (format[i] && ft_f(format[i]))
 	{
 		if (format[i] == '%')
-			i += ft_putchar('%', *data);
+			i += ft_putchar('%', data);
 		if (format[i] == '0' && !data->width && !data->minus)
 			data->zero = 1;
 		if (format[i] == '-')
@@ -24,7 +24,7 @@ int		format_check(char *format, va_list ap, fmtdata *data)
 		if (format[i] == '.')
 		{
 			i++;
-			i += precision_check(&format[i], ap, *data) - 1;
+			i += precision_check(&format[i], ap, data) - 1;
 		}
 		i++;
 	}
