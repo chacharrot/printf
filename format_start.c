@@ -8,11 +8,7 @@ void	format_start(char *format, va_list ap, fmtdata *data)
 	while (format[i])
 	{
 		if (format[i] != '%')
-			{
-				write(1, &format[i], 1);
-				data->rev += 1;
-				i++;
-			}
+			i += ft_putchar(format[i], data);
 		else if(format[i] == '%' && format[i + 1])
 			{
 				i += format_check(&format[i], ap, data);

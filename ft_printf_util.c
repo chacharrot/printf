@@ -26,5 +26,7 @@ int		ft_f(char format)
 		return (1);
 	if (format == '*')
 		return (1);
-	
+	if (format >= '0' && format <= '9')
+		return (1);
+	return (0);
 }

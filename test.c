@@ -1,8 +1,9 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 int main()
 {
 	char c = '1';
-	ft_printf("%2c2\n", c);
+	printf("%2c2\n", c);
 	return 0;
 }

@@ -12,10 +12,11 @@ int		precision_check(char *format, va_list ap, fmtdata *data)
 		i++;
 		return (i);
 	}
-	while (format[i] >= '0' && format[i] <= '9')
+	if (format[i] >= '0' && format[i] <= '9')
 	{
-		data->precision = data->precision * 10 + format[i] - '0';
-		i++;
+		while (format[i] >= '0' && format[i] <= '9')
+			data->precision = data->precision * 10 + format[i++] - '0';
+		i--;
 	}
 	return (i);
 }
