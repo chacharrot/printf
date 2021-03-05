@@ -24,6 +24,7 @@ void	ft_putwidth(fmtdata *data, size_t size);
 int		precision_check(char *format, va_list ap, fmtdata *data);
 void	data_set(fmtdata *data);
 int		ft_f(char format);
-
+void	ft_putstr(char *str, fmtdata *data);
+size_t	ft_strlen(char *str);
 
 # endif

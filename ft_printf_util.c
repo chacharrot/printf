@@ -16,7 +16,7 @@ void	ft_putstr(char *str, fmtdata *data)
 		i++;
 	if (data->precision < i)
 		i = data->precision;
-	if (data->precision > i);
+	if (data->precision > i)
 		data->precision = i;
 	write(1, str, i);
 	data->rev += i;
