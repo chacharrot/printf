@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef struct	fmtdata_s
 {
@@ -26,5 +27,6 @@ void	data_set(fmtdata *data);
 int		ft_f(char format);
 void	ft_putstr(char *str, fmtdata *data);
 size_t	ft_strlen(char *str);
+int		do_s(va_list ap, fmtdata *data);
 
 # endif

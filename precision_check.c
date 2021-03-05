@@ -11,11 +11,11 @@ int		precision_check(char *format, va_list ap, fmtdata *data)
 		data->precision = va_arg(ap, int);
 		return (i);
 	}
-	if (format[i] >= '0' && format[i] <= '9' !data->precision)
+	if (format[i] >= '0' && format[i] <= '9' && !data->precision)
 	{
 		while (format[i] >= '0' && format[i] <= '9')
 			data->precision = data->precision * 10 + format[i++] - '0';
-		i--;
 	}
+	printf("%d pre\n", data->precision);
 	return (i);
 }

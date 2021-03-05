@@ -2,13 +2,16 @@
 
 void	ft_putwidth(fmtdata *data, size_t size)
 {
-	while(data->width - size > 0)
+	size_t	i;
+
+	i = size;
+	while(data->width - i > 0)
 	{
 		if (data->zero)
 			write(1, "0", 1);
 		else
 			write(1, " ", 1);
-		size++;
+		i++;
 		data->rev += 1;
 	}
 }

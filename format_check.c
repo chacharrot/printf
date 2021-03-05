@@ -10,26 +10,31 @@ int		format_check(char *format, va_list ap, fmtdata *data)
 		if (format[i] == '%')
 			i += ft_putchar('%', data);
 		if (format[i] == '0' && !data->width && !data->minus)
+		{
+			i++;
 			data->zero = 1;
+		}
 		if (format[i] == '-')
 		{
 			data->minus = 1;
 			data->zero = 0;
+			i++;
 		}
 		if (format[i] == '*' && data->precision == -1)
+		{
 			data->width = va_arg(ap, int);
+			i++;
+		}
 		if (format[i] >= '0' && format[i] <= '9' && data->precision == -1)
 		{
 			while (format[i] >= '0' && format[i] <= '9')
 				data->width = data->width * 10 + format[i++] - '0';
-			i--;
 		}
 		if (format[i] == '.')
 		{
 			i++;
-			i += precision_check(&format[i], ap, data) - 1;
+			i += precision_check(&format[i], ap, data);
 		}
-		i++;
 	}
 	return (i);
 }
