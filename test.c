@@ -3,7 +3,7 @@
 
 int main()
 {
-	char c = '1';
-	printf("%2c2\n", c);
+	char *c = "aaaaaa";
+	printf("%010.9sbb\n", c);
 	return 0;
 }

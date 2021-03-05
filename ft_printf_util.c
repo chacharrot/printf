@@ -7,6 +7,19 @@ int		ft_putchar(char c, fmtdata *data)
 	return (1);
 }
 
+void	ft_putstr(char *str, fmtdata *data)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (data->precision < i)
+		i = data->precision;
+	write(1, str, i);
+	data->rev += i;
+}
+
 void	data_set(fmtdata *data)
 {
 	data->width = 0;
@@ -29,4 +42,14 @@ int		ft_f(char format)
 	if (format >= '0' && format <= '9')
 		return (1);
 	return (0);
+}
+
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
