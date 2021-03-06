@@ -7,19 +7,14 @@ int		ft_putchar(char c, fmtdata *data)
 	return (1);
 }
 
-void	ft_putstr(char *str, fmtdata *data)
+void	ft_putstr(char *str, fmtdata *data, size_t str_len)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	if (data->precision < i)
-		i = data->precision;
-	if (data->precision > i)
-		data->precision = i;
-	write(1, str, i);
-	data->rev += i;
+	if (data->precision < str_len)
+		str_len = data->precision;
+	if (data->precision > str_len)
+		data->precision = str_len;
+	write(1, str, str_len);
+	data->rev += str_len;
 }
 
 void	data_set(fmtdata *data)
@@ -29,6 +24,7 @@ void	data_set(fmtdata *data)
 	data->zero = 0;
 	data->minus = 0;
 	data->rev = 0;
+	data->int_minus = 0;
 }
 
 int		ft_f(char format)

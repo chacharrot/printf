@@ -4,8 +4,9 @@ int main()
 {
 	char *c = "aaaaaa";
 	char **str;
+	int d = -111;
 
-	printf("%-10.9sbb\n", c);
-	ft_printf("%-10.9sbb\n", c);
+	printf("%-5d2\n", d);
+	printf("%.3d\n", d);
 	return 0;
 }
