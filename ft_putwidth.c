@@ -21,8 +21,10 @@ void	ft_putwidth_d(fmtdata *data, size_t size)
 	size_t	i;
 
 	i = size;
+	if (data->precision > (int)size)
+		i = data->precision;
 	if (data->int_minus)
-		i--;
+		i++;
 	while(data->width - i > 0)
 	{
 		if (data->zero && data->precision == -1)

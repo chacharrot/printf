@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	do_d(va_list ap, fmtdata data)
+void	do_d(va_list ap, fmtdata *data)
 {
 	int		num;
 	char	*number;
