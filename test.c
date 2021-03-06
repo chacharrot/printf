@@ -6,7 +6,7 @@ int main()
 	char **str;
 	int d = -111;
 
-	printf("%-5d2\n", d);
-	printf("%.3d\n", d);
+	printf("%.5d2\n", d);
+	ft_printf("%.5d2\n", d);
 	return 0;
 }

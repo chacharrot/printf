@@ -12,9 +12,9 @@ void	do_d(va_list ap, fmtdata *data)
 	if (data->precision != -1 && data->precision < num_size)
 		data->precision = num_size;
 	if (data->minus)
-		ft_futstr_d(number, data, num_size);
+		ft_putstr_d(number, data, num_size);
 	if (data->width && (data->precision || !data->zero))
 		ft_putwidth_d(data, num_size);
 	if (!data->minus)
-		ft_futstr_d(number, data, num_size);
+		ft_putstr_d(number, data, num_size);
 }

@@ -31,7 +31,7 @@ void	ft_putstr(char *str, fmtdata *data, size_t str_len);
 void	ft_putstr_d(char *str, fmtdata *data, size_t str_len);
 size_t	ft_strlen(char *str);
 int		do_s(va_list ap, fmtdata *data);
-int		do_s(va_list ap, fmtdata *data);
+void	do_d(va_list ap, fmtdata *data);
 int		digitnumber(int n);
 char	*ft_itoa(int num, fmtdata *data);
 
