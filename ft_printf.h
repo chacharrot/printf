@@ -34,7 +34,10 @@ int		do_s(va_list ap, fmtdata *data);
 void	do_d(va_list ap, fmtdata *data);
 int		digitnumber(int n);
 char	*ft_itoa(int num, fmtdata *data);
-char	*ft_itoa_u(size_t num, fmtdata *data);
+char	*ft_itoa_u(size_t num);
 int		digitnumber_u(size_t n);
+void	do_u(va_list ap, fmtdata *data);
+char	*ft_itoa_xX(size_t num, char format);
+void	do_x(va_list ap, fmtdata *data);
 
 # endif

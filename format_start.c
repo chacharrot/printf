@@ -8,14 +8,13 @@ void	format_start(char *format, va_list ap, fmtdata *data)
 	i = 0;
 	while (format[i])
 	{
+		data_set(data);
 		if (format[i] != '%')
 			i += ft_putchar(format[i], data);
 		else if(format[i] == '%' && format[i + 1])
 			{
-				i += format_check(&format[i], ap, data, i);
+				i += format_check(&format[i], ap, data);
 				i += do_print(&format[i], ap, data);
-				data_set(data);
 			}
 	}
 }
-printf("%d\n", );

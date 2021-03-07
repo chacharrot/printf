@@ -6,7 +6,7 @@ void	ft_putstr_d(char *str, fmtdata *data, size_t str_len)
 
 	if (data->int_minus)
 		ft_putchar('-', data);
-	if (data->precision == -1 && data->zero)
+	if (data->precision == -1 && data->zero && data->int_minus)
 		ft_putwidth_d(data, str_len);
 	i = data->precision;
 	if (data->precision > (int)str_len)
