@@ -23,7 +23,6 @@ void	data_set(fmtdata *data)
 	data->precision = -1;
 	data->zero = 0;
 	data->minus = 0;
-	data->rev = 0;
 	data->int_minus = 0;
 }
 
@@ -38,6 +37,8 @@ int		ft_f(char format)
 	if (format == '*')
 		return (1);
 	if (format >= '0' && format <= '9')
+		return (1);
+	if (format == '.')
 		return (1);
 	return (0);
 }
