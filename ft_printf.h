@@ -37,7 +37,7 @@ char	*ft_itoa_xX(size_t num, char format);
 char	*ft_itoa_p(unsigned long long num, char format);
 void	do_u(va_list ap, fmtdata *data);
 void	do_x(va_list ap, fmtdata *data);
-void	do_p(va_list ap, fmtdata data);
+void	do_p(va_list ap, fmtdata *data);
 int		do_s(va_list ap, fmtdata *data);
 void	do_d(va_list ap, fmtdata *data);
 void	do_c(va_list ap, fmtdata *data);

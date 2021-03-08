@@ -6,8 +6,20 @@ int main()
 	char **str;
 	int d = 111;
 
-	printf("%p 2\n", c);
+	printf("%13.8p 2\n", c);
+	ft_printf("%13.8p 2\n", c);
+	printf("%10p a\n",c);
+	ft_printf("%10p a\n", c);
+	printf("%.p a\n", c);
+	ft_printf("%.p a\n", c);
+	printf("%p a\n", c);
+	ft_printf("%p a\n", c);
+	printf("%3p a\n", c);
+	ft_printf("%3p a\n", c);
+	printf("%15p a\n", c);
+	ft_printf("%15p a\n", c);
+	printf("%013.10p a\n", c);
+	ft_printf("%013.10p a\n", c);
 	return 0;
 }
 
-//폭 '-' 인식. 정밀도, '0'인식안함.

@@ -30,6 +30,21 @@ static int		digitnumber_u(size_t n)
 	return (i);
 }
 
+static int		digitnumber_p(unsigned long long n)
+{
+	int i;
+
+	if (n == 0)
+		return (1);
+	i = 0;
+	while (n)
+	{
+		n = n / 16;
+		i++;
+	}
+	return (i);
+}
+
 static int		digitnumber_xX(size_t n)
 {
 	int	i;
@@ -120,7 +135,7 @@ char	*ft_itoa_p(unsigned long long num, char format)
 	char			*base;
 	char			*str;
 	int				i;
-	unsigned int	nbr;
+	unsigned long long	nbr;
 
 	if (format == 'x')
 		base = "0123456789abcdef";
