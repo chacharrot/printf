@@ -19,6 +19,5 @@ int		precision_check(char *format, va_list ap, fmtdata *data)
 			data->precision = data->precision * 10 + format[i++] - '0';
 		i--;
 	}
-	printf("%d\n", data->precision);
 	return (i);
 }

@@ -97,11 +97,36 @@ char	*ft_itoa_xX(size_t num, char format)
 	int				i;
 	unsigned int	nbr;
 
-	if (format = 'x')
+	if (format == 'x')
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
 	i = digitnumber_xX(num);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	else
+		nbr = num;
+	while (i--)
+	{
+		str[i] = base[nbr % 16];
+		nbr = nbr / 16;
+	}
+	return (str);
+}
+
+char	*ft_itoa_p(unsigned long long num, char format)
+{
+	char			*base;
+	char			*str;
+	int				i;
+	unsigned int	nbr;
+
+	if (format == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	i = digitnumber_p(num);
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);

@@ -19,7 +19,7 @@ int		format_check(char *format, va_list ap, fmtdata *data)
 			data->zero = 1;
 		else if (format[i] == '-')
 			data_minus(data);
-		else if (format[i] == '*' && data->precision == -1)
+		else if (format[i] == '*' && data->precision == -1 && !data->width)
 			data->width = va_arg(ap, int);
 		else if (format[i] >= '0' && format[i] <= '9' && data->precision == -1)
 		{

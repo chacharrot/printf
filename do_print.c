@@ -11,6 +11,8 @@ int	do_print(char *format, va_list ap, fmtdata *data)
 	if (*format == 'u')
 		do_u(ap, data);
 	if (*format == 'x')
-		do_x(ap, data, format);
+		do_x(ap, data);
+	if (*format == 'p')
+		do_p(ap, data);
 	return (1);
 }

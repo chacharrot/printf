@@ -35,3 +35,22 @@ void	ft_putwidth_d(fmtdata *data, size_t size)
 		data->rev += 1;
 	}
 }
+
+void	ft_putwidth_p(fmtdata *data, size_t size)
+{
+	size_t	i;
+
+	if (data->precision > (int)size)
+		i = data->precision;
+	if (data->int_minus)
+		i++;
+	while(data->width > i)
+	{
+		if (data->zero && data->precision == -1)
+			write(1, "0", 1);
+		else
+			write(1, " ", 1);
+		i++;
+		data->rev += 1;
+	}
+}

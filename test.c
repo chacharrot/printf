@@ -6,6 +6,8 @@ int main()
 	char **str;
 	int d = 111;
 
-	ft_printf("%.20d 2\n", d);
+	printf("%p 2\n", c);
 	return 0;
 }
+
+//폭 '-' 인식. 정밀도, '0'인식안함.
