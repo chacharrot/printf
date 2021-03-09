@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int		digitnumber(int n)
+int		digitnumber(int n)
 {
 	int	i;
 
@@ -15,7 +15,7 @@ static int		digitnumber(int n)
 	return (i);
 }
 
-static int		digitnumber_u(size_t n)
+int		digitnumber_u(size_t n)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ static int		digitnumber_u(size_t n)
 	return (i);
 }
 
-static int		digitnumber_xX(size_t n)
+int		digitnumber_xX(size_t n)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ static int		digitnumber_xX(size_t n)
 	return (i);
 }
 
-static int		digitnumber_p(unsigned long long n)
+int		digitnumber_p(unsigned long long n)
 {
 	int	i;
 

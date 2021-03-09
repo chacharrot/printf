@@ -36,3 +36,13 @@ void	ft_putstr_p(char *str, fmtdata *data, size_t str_len)
 	data->rev += str_len;
 }
 
+void	ft_putstr(char *str, fmtdata *data, size_t str_len)
+{
+	if (data->precision < str_len)
+		str_len = data->precision;
+	if (data->precision > str_len)
+		data->precision = str_len;
+	write(1, str, str_len);
+	data->rev += str_len;
+}
+
