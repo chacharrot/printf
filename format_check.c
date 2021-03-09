@@ -1,12 +1,41 @@
 #include "ft_printf.h"
 
-static void data_minus(fmtdata *data)
+static void 	data_minus(fmtdata *data)
 {
 	data->minus = 1;
 	data->zero = 0;
 }
 
-int		format_check(char *format, va_list ap, fmtdata *data)
+static void		data_width(va_list ap, fmtdata *data)
+{
+	data->width = va_arg(ap, int);
+	if (data->width < 0)
+	{
+		data->minus = 1;
+		data->width *= -1;
+	}
+}
+
+static int		precision_check(char *format, va_list ap, fmtdata *data)
+{
+	int	i;
+
+	i = 0;
+	data->precision = 0;
+	if (*format == '\0')
+		return (0);
+	if (format[i] == '*')
+		data->precision = va_arg(ap, int);
+	else if (format[i] >= '0' && format[i] <= '9')
+	{
+		while (format[i] >= '0' && format[i] <= '9')
+			data->precision = data->precision * 10 + format[i++] - '0';
+		i--;
+	}
+	return (i);
+}
+
+int			format_check(char *format, va_list ap, fmtdata *data)
 {
 	int i;
 
@@ -34,7 +63,7 @@ int		format_check(char *format, va_list ap, fmtdata *data)
 	return (i);
 }
 
-void	format_start(char *format, va_list ap, fmtdata *data)
+void		format_start(char *format, va_list ap, fmtdata *data)
 {
 	int		i;
 
@@ -50,37 +79,5 @@ void	format_start(char *format, va_list ap, fmtdata *data)
 				i += format_check(&format[i], ap, data);
 				i += do_print(&format[i], ap, data);
 			}
-	}
-}
-
-int		precision_check(char *format, va_list ap, fmtdata *data)
-{
-	int	i;
-
-	i = 0;
-	data->precision = 0;
-	if (*format == '\0')
-		return (0);
-	if (format[i] == '*')
-	{
-		data->precision = va_arg(ap, int);
-		return (i);
-	}
-	if (format[i] >= '0' && format[i] <= '9')
-	{
-		while (format[i] >= '0' && format[i] <= '9')
-			data->precision = data->precision * 10 + format[i++] - '0';
-		i--;
-	}
-	return (i);
-}
-
-static void	data_width(va_list ap, fmtdata *data)
-{
-	data->width = va_arg(ap, int);
-	if (data_width < 0)
-	{
-		data->minus = 1;
-		data->width *= -1;
 	}
 }

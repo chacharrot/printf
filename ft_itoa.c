@@ -50,7 +50,7 @@ char	*ft_itoa_xX(size_t num, char format)
 	char			*base;
 	char			*str;
 	int				i;
-	unsigned int	nbr;
+	unsigned long long	nbr;
 
 	if (format == 'x')
 		base = "0123456789abcdef";
