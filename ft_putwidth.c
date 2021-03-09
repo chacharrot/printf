@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
-void	ft_putwidth(fmtdata *data, size_t size)
+void	ft_putwidth(fmtdata *data, int size)
 {
-	size_t	i;
+	int	i;
 
 	i = size;
 	while(data->width > i)
@@ -16,12 +16,12 @@ void	ft_putwidth(fmtdata *data, size_t size)
 	}
 }
 
-void	ft_putwidth_d(fmtdata *data, size_t size)
+void	ft_putwidth_d(fmtdata *data, int size)
 {
-	size_t	i;
+	int	i;
 
 	i = size;
-	if (data->precision > (int)size)
+	if (data->precision > size)
 		i = data->precision;
 	if (data->int_minus)
 		i++;

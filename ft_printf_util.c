@@ -7,7 +7,7 @@ int		ft_putchar(char c, fmtdata *data)
 	return (1);
 }
 
-void	ft_putstr(char *str, fmtdata *data, size_t str_len)
+void	ft_putstr(char *str, fmtdata *data, int str_len)
 {
 	if (data->precision < str_len)
 		str_len = data->precision;
@@ -43,9 +43,9 @@ int		ft_f(char format)
 	return (0);
 }
 
-size_t	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i])

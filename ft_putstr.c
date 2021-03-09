@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putstr_d(char *str, fmtdata *data, size_t str_len)
+void	ft_putstr_d(char *str, fmtdata *data, int str_len)
 {
 	int	i;
 
@@ -16,10 +16,10 @@ void	ft_putstr_d(char *str, fmtdata *data, size_t str_len)
 	data->rev += str_len;
 }
 
-void	ft_putstr_p(char *str, fmtdata *data, size_t str_len)
+void	ft_putstr_p(char *str, fmtdata *data, int str_len)
 {
 	int		i;
-	size_t	k;
+	int		k;
 
 	k = str_len;
 	write(1, "0x", 2);
@@ -36,7 +36,7 @@ void	ft_putstr_p(char *str, fmtdata *data, size_t str_len)
 	data->rev += str_len;
 }
 
-void	ft_putstr(char *str, fmtdata *data, size_t str_len)
+void	ft_putstr(char *str, fmtdata *data, int str_len)
 {
 	if (data->precision < str_len)
 		str_len = data->precision;

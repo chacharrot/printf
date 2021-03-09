@@ -15,7 +15,7 @@ void	do_d(va_list ap, fmtdata *data)
 {
 	int		num;
 	char	*number;
-	size_t	num_size;
+	int		num_size;
 
 	num = va_arg(ap, int);
 	number = ft_itoa(num, data);
@@ -35,7 +35,7 @@ void	do_u(va_list ap, fmtdata *data)
 {
 	size_t	num;
 	char	*number;
-	size_t	num_size;
+	int		num_size;
 
 	num = va_arg(ap, unsigned int);
 	number = ft_itoa_u(num);
@@ -54,7 +54,7 @@ void	do_p(va_list ap, fmtdata *data)
 {
 	unsigned long long	num;
 	char				*number;
-	size_t				num_size;
+	int					num_size;
 
 	num = va_arg(ap, void *);
 	number = ft_itoa_p(num, 'x');
@@ -71,8 +71,8 @@ void	do_p(va_list ap, fmtdata *data)
 
 int		do_s(va_list ap, fmtdata *data)
 {
-	char *str;
-	size_t	str_len;
+	char	*str;
+	int		str_len;
 
 	str = va_arg(ap, char *);
 	str_len = ft_strlen(str);
