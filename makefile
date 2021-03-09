@@ -1,4 +1,4 @@
-NAME=ft_print.a
+NAME=libftprintf.a
 
 SRCS = do_format.c do_print.c do_x.c format_check.c ft_digitnumber.c\
 		ft_itoa.c ft_printf_util.c ft_printf.c ft_putstr.c ft_putwidth.c

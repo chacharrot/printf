@@ -7,16 +7,6 @@ int		ft_putchar(char c, fmtdata *data)
 	return (1);
 }
 
-void	ft_putstr(char *str, fmtdata *data, int str_len)
-{
-	if (data->precision < str_len)
-		str_len = data->precision;
-	if (data->precision > str_len)
-		data->precision = str_len;
-	write(1, str, str_len);
-	data->rev += str_len;
-}
-
 void	data_set(fmtdata *data)
 {
 	data->width = 0;

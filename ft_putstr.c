@@ -22,9 +22,9 @@ void	ft_putstr_p(char *str, fmtdata *data, int str_len)
 	int		k;
 
 	k = str_len;
-	write(1, "0x", 2);
+	write(1, "0x1", 3);
 	data->rev += 2;
-	while(9 > k)
+	while(8 > k)
 		ft_putchar('0', data);
 	if (data->precision == -1 && data->zero)
 		ft_putwidth_p(data);
