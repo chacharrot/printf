@@ -38,7 +38,7 @@ void	ft_putwidth_d(fmtdata *data, int size)
 
 void	ft_putwidth_p(fmtdata *data)
 {
-	size_t	i;
+	int	i;
 
 	i = 9;
 	if (data->precision > 9)

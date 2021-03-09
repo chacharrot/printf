@@ -23,7 +23,7 @@ int		do_print(char *format, va_list ap, fmtdata *data);
 int		ft_putchar(char c, fmtdata *data);
 void	ft_putwidth(fmtdata *data, int size);
 void	ft_putwidth_d(fmtdata *data, int size);
-void	ft_putwidth_p(fmtdata *data;
+void	ft_putwidth_p(fmtdata *data);
 int		precision_check(char *format, va_list ap, fmtdata *data);
 void	data_set(fmtdata *data);
 int		ft_f(char format);

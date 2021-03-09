@@ -27,7 +27,7 @@ void	ft_putstr_p(char *str, fmtdata *data, int str_len)
 	while(9 > k)
 		ft_putchar('0', data);
 	if (data->precision == -1 && data->zero)
-		ft_putwidth_p(data, 11);
+		ft_putwidth_p(data);
 	i = data->precision;
 	if (data->precision > 9)
 		while (i-- > 9)

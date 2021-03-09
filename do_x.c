@@ -4,7 +4,7 @@ void	do_x(va_list ap, fmtdata *data)
 {
 	size_t	num;
 	char	*number;
-	size_t	num_size;
+	int		num_size;
 
 	num = va_arg(ap, unsigned int);
 	number = ft_itoa_xX(num, 'x');
@@ -23,7 +23,7 @@ void	do_X(va_list ap, fmtdata *data)
 {
 	size_t	num;
 	char	*number;
-	size_t	num_size;
+	int		num_size;
 
 	num = va_arg(ap, unsigned int);
 	number = ft_itoa_xX(num, 'X');

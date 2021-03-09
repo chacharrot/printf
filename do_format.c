@@ -56,7 +56,7 @@ void	do_p(va_list ap, fmtdata *data)
 	char				*number;
 	int					num_size;
 
-	num = va_arg(ap, void *);
+	num = va_arg(ap, unsigned long long);
 	number = ft_itoa_p(num, 'x');
 	num_size = ft_strlen(number);
 	if (data->precision != -1 && data->precision < num_size)
@@ -64,7 +64,7 @@ void	do_p(va_list ap, fmtdata *data)
 	if (data->minus)
 		ft_putstr_p(number, data, num_size);
 	if (data->width && (data->precision != -1 || !data->zero))
-		ft_putwidth_p(data, num_size);
+		ft_putwidth_p(data);
 	if (!data->minus)
 		ft_putstr_p(number, data, num_size);
 }
