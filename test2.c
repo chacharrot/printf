@@ -1,4 +1,17 @@
-#include "ft_printf.h"
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
+
+typedef struct	fmtdata_s
+{
+	int		width;
+	int		precision;
+	int		zero;
+	int		minus;
+	int		rev;
+	int		int_minus;
+}				fmtdata;
 
 static void	data_set(fmtdata *data)
 {

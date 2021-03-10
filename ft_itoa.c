@@ -7,9 +7,13 @@ char	*ft_itoa(int num, fmtdata *data)
 	unsigned int	nbr;
 
 	i = digitnumber(num);
+	if (num == 0 && data->precision == 0)
+	{
+		str = malloc(1);
+		str[0] = '\0';
+		return (str);
+	}
 	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
 	if (num < 0)
 	{
 		nbr = (unsigned int)(num * -1);
@@ -50,7 +54,7 @@ char	*ft_itoa_xX(size_t num, char format)
 	char			*base;
 	char			*str;
 	int				i;
-	unsigned long long	nbr;
+	unsigned int	nbr;
 
 	if (format == 'x')
 		base = "0123456789abcdef";
@@ -72,10 +76,10 @@ char	*ft_itoa_xX(size_t num, char format)
 
 char	*ft_itoa_p(unsigned long long num, char format)
 {
-	char			*base;
-	char			*str;
-	int				i;
-	unsigned int	nbr;
+	char				*base;
+	char				*str;
+	int					i;
+	unsigned long long	nbr;
 
 	if (format == 'x')
 		base = "0123456789abcdef";

@@ -25,12 +25,16 @@ static int		precision_check(char *format, va_list ap, fmtdata *data)
 	if (*format == '\0')
 		return (0);
 	if (format[i] == '*')
+	{
 		data->precision = va_arg(ap, int);
+		if (data->precision < 0)
+			data->precision = -1;
+		return(i);
+	}
 	else if (format[i] >= '0' && format[i] <= '9')
 	{
 		while (format[i] >= '0' && format[i] <= '9')
 			data->precision = data->precision * 10 + format[i++] - '0';
-		i--;
 	}
 	return (i);
 }
@@ -48,16 +52,16 @@ int			format_check(char *format, va_list ap, fmtdata *data)
 			data->zero = 1;
 		else if (format[i] == '-')
 			data_minus(data);
-		else if (format[i] == '*' && data->precision == -1 && !data->width)
+		else if (format[i] == '*' && !data->width)
 			data_width(ap, data);
-		else if (format[i] >= '0' && format[i] <= '9' && data->precision == -1)
+		else if (format[i] >= '1' && format[i] <= '9' && data->precision == -1)
 		{
 			while (format[i] >= '0' && format[i] <= '9')
 				data->width = data->width * 10 + format[i++] - '0';
 			i--;
 		}
 		else if (format[i] == '.')
-			i += precision_check(&format[i + 1], ap, data);
+			i += precision_check(&format[++i], ap, data);
 		i++;
 	}
 	return (i);
