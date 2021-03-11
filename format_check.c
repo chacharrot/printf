@@ -24,16 +24,17 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 	data->pre = 0;
 	if (*format == '\0')
 		return (0);
-	if (format[i] == '*')
+	if (format[i + 1] == '*')
 	{
 		data->pre = va_arg(ap, int);
 		if (data->pre < 0)
 			data->pre = -1;
+		i++;
 		return(i);
 	}
-	else if (format[i] >= '0' && format[i] <= '9')
+	else if (format[i + 1] >= '0' && format[i + 1] <= '9')
 	{
-		while (format[i] >= '0' && format[i] <= '9')
+		while (format[i + 1] >= '0' && format[i + 1] <= '9')
 			data->pre = data->pre * 10 + format[i++] - '0';
 	}
 	return (i);
@@ -61,7 +62,7 @@ int			format_check(char *format, va_list ap, fmtdata *data)
 			i--;
 		}
 		else if (format[i] == '.')
-			i += pre_check(&format[++i], ap, data);
+			i += pre_check(&format[i], ap, data);
 		i++;
 	}
 	return (i);

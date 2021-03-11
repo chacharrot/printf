@@ -21,13 +21,13 @@ void	ft_putwidth_d(fmtdata *data, int size)
 	int	i;
 
 	i = size;
-	if (data->precision > size)
-		i = data->precision;
+	if (data->pre > size)
+		i = data->pre;
 	if (data->int_minus)
 		i++;
 	while (data->width > i)
 	{
-		if (data->zero && data->precision == -1)
+		if (data->zero && data->pre == -1)
 			write(1, "0", 1);
 		else
 			write(1, " ", 1);
@@ -41,11 +41,11 @@ void	ft_putwidth_p(fmtdata *data)
 	int	i;
 
 	i = 9;
-	if (data->precision > 9)
-		i = data->precision;
+	if (data->pre > 9)
+		i = data->pre;
 	while (data->width > i + 2)
 	{
-		if (data->zero && data->precision == -1)
+		if (data->zero && data->pre == -1)
 			write(1, "0", 1);
 		else
 			write(1, " ", 1);
