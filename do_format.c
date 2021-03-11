@@ -38,7 +38,7 @@ void	do_u(va_list ap, fmtdata *data)
 	int		num_size;
 
 	num = va_arg(ap, unsigned int);
-	number = ft_itoa_u(num);
+	number = ft_itoa_u(num, data);
 	num_size = ft_strlen(number);
 	if (data->pre != -1 && data->pre < num_size)
 		data->pre = num_size;
@@ -57,7 +57,7 @@ void	do_p(va_list ap, fmtdata *data)
 	int					num_size;
 
 	num = va_arg(ap, unsigned long long);
-	number = ft_itoa_p(num, 'x');
+	number = ft_itoa_p(num, 'x', data);
 	num_size = ft_strlen(number);
 	if (data->pre != -1 && data->pre < num_size)
 		data->pre = num_size;
