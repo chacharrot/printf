@@ -8,7 +8,7 @@
 typedef struct	fmtdata_s
 {
 	int		width;
-	int		precision;
+	int		pre;
 	int		zero;
 	int		minus;
 	int		rev;
@@ -31,7 +31,7 @@ void	ft_putstr_p(char *str, fmtdata *data, int str_len);
 int		ft_strlen(char *str);
 char	*ft_itoa(int num, fmtdata *data);
 char	*ft_itoa_u(size_t num);
-char	*ft_itoa_xX(size_t num, char format);
+char	*ft_itoa_hex(size_t num, char format);
 char	*ft_itoa_p(unsigned long long num, char format);
 void	do_u(va_list ap, fmtdata *data);
 void	do_x(va_list ap, fmtdata *data);

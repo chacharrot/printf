@@ -30,7 +30,7 @@ int		digitnumber_u(size_t n)
 	return (i);
 }
 
-int		digitnumber_xX(size_t n)
+int		digitnumber_hex(size_t n)
 {
 	int	i;
 

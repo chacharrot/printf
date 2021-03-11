@@ -13,18 +13,18 @@ void	do_c(va_list ap, fmtdata *data)
 
 void	do_d(va_list ap, fmtdata *data)
 {
-	int		num;
 	char	*number;
 	int		num_size;
+	int		num;
 
 	num = va_arg(ap, int);
 	number = ft_itoa(num, data);
 	num_size = ft_strlen(number);
-	if (data->precision != -1 && data->precision < num_size)
-		data->precision = num_size;
+	if (data->pre != -1 && data->pre < num_size)
+		data->pre = num_size;
 	if (data->minus)
 		ft_putstr_d(number, data, num_size);
-	if (data->width && (data->precision != -1 || !data->zero))
+	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
 		ft_putwidth_d(data, num_size);
 	if (!data->minus)
 		ft_putstr_d(number, data, num_size);
@@ -40,11 +40,11 @@ void	do_u(va_list ap, fmtdata *data)
 	num = va_arg(ap, unsigned int);
 	number = ft_itoa_u(num);
 	num_size = ft_strlen(number);
-	if (data->precision != -1 && data->precision < num_size)
-		data->precision = num_size;
+	if (data->pre != -1 && data->pre < num_size)
+		data->pre = num_size;
 	if (data->minus)
 		ft_putstr_d(number, data, num_size);
-	if (data->width && (data->precision != -1 || !data->zero))
+	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
 		ft_putwidth_d(data, num_size);
 	if (!data->minus)
 		ft_putstr_d(number, data, num_size);
@@ -59,11 +59,11 @@ void	do_p(va_list ap, fmtdata *data)
 	num = va_arg(ap, unsigned long long);
 	number = ft_itoa_p(num, 'x');
 	num_size = ft_strlen(number);
-	if (data->precision != -1 && data->precision < num_size)
-		data->precision = num_size;
+	if (data->pre != -1 && data->pre < num_size)
+		data->pre = num_size;
 	if (data->minus)
 		ft_putstr_p(number, data, num_size);
-	if (data->width && (data->precision != -1 || !data->zero))
+	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
 		ft_putwidth_p(data);
 	if (!data->minus)
 		ft_putstr_p(number, data, num_size);
@@ -76,12 +76,12 @@ int		do_s(va_list ap, fmtdata *data)
 
 	str = va_arg(ap, char *);
 	str_len = ft_strlen(str);
-	if (data->precision > str_len)
-		data->precision = str_len;
+	if (data->pre > str_len)
+		data->pre = str_len;
 	if(data->minus)
 		ft_putstr(str, data, str_len);
 	if(data->width)
-		ft_putwidth(data, data->precision);
+		ft_putwidth(data, data->pre);
 	if(!data->minus)
 		ft_putstr(str, data, str_len);
 	return (1);

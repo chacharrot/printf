@@ -10,7 +10,7 @@ int		ft_putchar(char c, fmtdata *data)
 void	data_set(fmtdata *data)
 {
 	data->width = 0;
-	data->precision = -1;
+	data->pre = -1;
 	data->zero = 0;
 	data->minus = 0;
 	data->int_minus = 0;

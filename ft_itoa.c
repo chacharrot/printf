@@ -7,7 +7,7 @@ char	*ft_itoa(int num, fmtdata *data)
 	unsigned int	nbr;
 
 	i = digitnumber(num);
-	if (num == 0 && data->precision == 0)
+	if (num == 0 && data->pre == 0)
 	{
 		str = malloc(1);
 		str[0] = '\0';
@@ -36,6 +36,12 @@ char	*ft_itoa_u(size_t num)
 	unsigned int	nbr;
 
 	i = digitnumber_u(num);
+	if (num == 0 && data->pre == 0)
+	{
+		str = malloc(1);
+		str[0] = '\0';
+		return (str);
+	}
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);
@@ -49,7 +55,7 @@ char	*ft_itoa_u(size_t num)
 	return (str);
 }
 
-char	*ft_itoa_xX(size_t num, char format)
+char	*ft_itoa_hex(size_t num, char format)
 {
 	char			*base;
 	char			*str;
@@ -60,12 +66,15 @@ char	*ft_itoa_xX(size_t num, char format)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	i = digitnumber_xX(num);
+	i = digitnumber_hex(num);
+	if (num == 0 && data->pre == 0)
+	{
+		str = malloc(1);
+		str[0] = '\0';
+		return (str);
+	}
 	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	else
-		nbr = num;
+	nbr = num;
 	while (i--)
 	{
 		str[i] = base[nbr % 16];
@@ -86,11 +95,14 @@ char	*ft_itoa_p(unsigned long long num, char format)
 	else
 		base = "0123456789ABCDEF";
 	i = digitnumber_p(num);
+	if (num == 0 && data->pre == 0)
+	{
+		str = malloc(1);
+		str[0] = '\0';
+		return (str);
+	}
 	str = malloc(i + 1);
-	if (!str)
-		return (NULL);
-	else
-		nbr = num;
+	nbr = num;
 	while (i--)
 	{
 		str[i] = base[nbr % 16];

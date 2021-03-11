@@ -7,7 +7,7 @@ void	do_x(va_list ap, fmtdata *data)
 	int		num_size;
 
 	num = va_arg(ap, unsigned int);
-	number = ft_itoa_xX(num, 'x');
+	number = ft_itoa_hex(num, 'x');
 	num_size = ft_strlen(number);
 	if (data->precision != -1 && data->precision < num_size)
 		data->precision = num_size;
@@ -26,7 +26,7 @@ void	do_X(va_list ap, fmtdata *data)
 	int		num_size;
 
 	num = va_arg(ap, unsigned int);
-	number = ft_itoa_xX(num, 'X');
+	number = ft_itoa_hex(num, 'X');
 	num_size = ft_strlen(number);
 	if (data->precision != -1 && data->precision < num_size)
 		data->precision = num_size;

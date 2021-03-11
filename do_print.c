@@ -9,10 +9,7 @@ int	do_print(char *format, va_list ap, fmtdata *data)
 	if (*format == 's')
 		do_s(ap, data);
 	if (*format == 'd' || *format == 'i')
-	{
-		num = va_arg(ap, int);
-		do_d(num, data);
-	}
+		do_d(ap, data);
 	if (*format == 'u')
 		do_u(ap, data);
 	if (*format == 'x')
