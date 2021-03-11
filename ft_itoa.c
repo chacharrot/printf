@@ -29,7 +29,7 @@ char	*ft_itoa(int num, fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_u(size_t num)
+char	*ft_itoa_u(size_t num, fmtdata *data)
 {
 	char			*str;
 	int				i;
@@ -55,7 +55,7 @@ char	*ft_itoa_u(size_t num)
 	return (str);
 }
 
-char	*ft_itoa_hex(size_t num, char format)
+char	*ft_itoa_hex(size_t num, char format, fmtdata *data)
 {
 	char			*base;
 	char			*str;
@@ -83,7 +83,7 @@ char	*ft_itoa_hex(size_t num, char format)
 	return (str);
 }
 
-char	*ft_itoa_p(unsigned long long num, char format)
+char	*ft_itoa_p(unsigned long long num, char format, fmtdata *data)
 {
 	char				*base;
 	char				*str;

@@ -40,7 +40,7 @@ int		do_s(va_list ap, fmtdata *data);
 void	do_d(va_list ap, fmtdata *data);
 void	do_c(va_list ap, fmtdata *data);
 int		digitnumber_p(unsigned long long n);
-int		digitnumber_xX(size_t n);
+int		digitnumber_hex(size_t n);
 int		digitnumber_u(size_t n);
 int		digitnumber(int n);
 
