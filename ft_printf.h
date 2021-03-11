@@ -32,7 +32,7 @@ int		ft_strlen(char *str);
 char	*ft_itoa(int num, fmtdata *data);
 char	*ft_itoa_u(size_t num, fmtdata *data);
 char	*ft_itoa_hex(size_t num, char format, fmtdata *data);
-char	*ft_itoa_p(unsigned long long num, char format, fmtdata *data);
+char	*ft_itoa_p(unsigned long long num, fmtdata *data);
 void	do_u(va_list ap, fmtdata *data);
 void	do_x(va_list ap, fmtdata *data);
 void	do_p(va_list ap, fmtdata *data);

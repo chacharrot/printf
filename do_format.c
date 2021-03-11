@@ -57,7 +57,7 @@ void	do_p(va_list ap, fmtdata *data)
 	int					num_size;
 
 	num = va_arg(ap, unsigned long long);
-	number = ft_itoa_p(num, 'x', data);
+	number = ft_itoa_p(num, data);
 	num_size = ft_strlen(number);
 	if (data->pre != -1 && data->pre < num_size)
 		data->pre = num_size;
@@ -76,12 +76,14 @@ int		do_s(va_list ap, fmtdata *data)
 
 	str = va_arg(ap, char *);
 	str_len = ft_strlen(str);
+	if (data->pre >= 0 && data->pre < str_len)
+		str_len = data->pre;
 	if (data->pre > str_len)
 		data->pre = str_len;
 	if(data->minus)
 		ft_putstr(str, data, str_len);
 	if(data->width)
-		ft_putwidth(data, data->pre);
+		ft_putwidth(data, str_len);
 	if(!data->minus)
 		ft_putstr(str, data, str_len);
 	return (1);

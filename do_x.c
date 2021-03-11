@@ -13,7 +13,7 @@ void	do_x(va_list ap, fmtdata *data)
 		data->pre = num_size;
 	if (data->minus)
 		ft_putstr_d(number, data, num_size);
-	if (data->width && (data->pre != -1 || !data->zero))
+	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
 		ft_putwidth_d(data, num_size);
 	if (!data->minus)
 		ft_putstr_d(number, data, num_size);
@@ -32,7 +32,7 @@ void	do_X(va_list ap, fmtdata *data)
 		data->pre = num_size;
 	if (data->minus)
 		ft_putstr_d(number, data, num_size);
-	if (data->width && (data->pre != -1 || !data->zero))
+	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
 		ft_putwidth_d(data, num_size);
 	if (!data->minus)
 		ft_putstr_d(number, data, num_size);

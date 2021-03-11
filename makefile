@@ -7,6 +7,8 @@ OBJS = $(SRCS:.c=.o)
 
 INCLUDES = ft_printf.h
 
+all : $(NAME)
+
 $(NAME): $(OBJS)
 
 $(OBJS): $(SRCS) $(INCLUDES)

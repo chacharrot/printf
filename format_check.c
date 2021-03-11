@@ -35,7 +35,10 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 	else if (format[i + 1] >= '0' && format[i + 1] <= '9')
 	{
 		while (format[i + 1] >= '0' && format[i + 1] <= '9')
-			data->pre = data->pre * 10 + format[i++] - '0';
+		{
+			data->pre = data->pre * 10 + format[i + 1] - '0';
+			i++;
+		}
 	}
 	return (i);
 }
