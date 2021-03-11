@@ -83,17 +83,13 @@ char	*ft_itoa_hex(size_t num, char format, fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_p(unsigned long long num, char format, fmtdata *data)
+char	*ft_itoa_p(unsigned long long num, fmtdata *data)
 {
 	char				*base;
 	char				*str;
 	int					i;
-	unsigned long long	nbr;
 
-	if (format == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
+	base = "0123456789ABCDEF";
 	i = digitnumber_p(num);
 	if (num == 0 && data->pre == 0)
 	{
@@ -102,11 +98,11 @@ char	*ft_itoa_p(unsigned long long num, char format, fmtdata *data)
 		return (str);
 	}
 	str = malloc(i + 1);
-	nbr = num;
+	str[i] = '\0';
 	while (i--)
 	{
-		str[i] = base[nbr % 16];
-		nbr = nbr / 16;
+		str[i] = base[num % 16];
+		num = num / 16;
 	}
 	return (str);
 }

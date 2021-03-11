@@ -2,8 +2,6 @@
 
 int	do_print(char *format, va_list ap, fmtdata *data)
 {
-	int num;
-
 	if (*format == 'c')
 		do_c(ap, data);
 	if (*format == 's')
