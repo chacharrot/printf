@@ -7,7 +7,7 @@ void	do_x(va_list ap, fmtdata *data)
 	int		num_size;
 
 	num = va_arg(ap, unsigned int);
-	number = ft_itoa_hex(num, 'x');
+	number = ft_itoa_hex(num, 'x', data);
 	num_size = ft_strlen(number);
 	if (data->pre != -1 && data->pre < num_size)
 		data->pre = num_size;
