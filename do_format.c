@@ -8,7 +8,6 @@ void	do_c(va_list ap, fmtdata *data)
 		ft_putwidth(data, 1);
 	if (!data->minus)
 		ft_putchar(va_arg(ap, int), data);
-	data->rev += 1;
 }
 
 void	do_d(va_list ap, fmtdata *data)
@@ -58,7 +57,7 @@ void	do_p(va_list ap, fmtdata *data)
 
 	num = va_arg(ap, unsigned long long);
 	number = ft_itoa_p(num, data);
-	num_size = ft_strlen(num);
+	num_size = ft_strlen(number);
 	if (data->pre != -1 && data->pre < num_size)
 		data->pre = num_size;
 	if (data->minus)
@@ -75,9 +74,12 @@ int		do_s(va_list ap, fmtdata *data)
 	int		str_len;
 
 	str = va_arg(ap, char *);
+	if (str == NULL)
+	{
+		str = malloc(1);
+		*str = '\0';
+	}
 	str_len = ft_strlen(str);
-	if (data->pre >= 0 && data->pre < str_len)
-		str_len = data->pre;
 	if (data->pre > str_len)
 		data->pre = str_len;
 	if(data->minus)

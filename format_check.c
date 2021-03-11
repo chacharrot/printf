@@ -20,25 +20,25 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	data->pre = 0;
 	if (*format == '\0')
-		return (0);
-	if (format[i + 1] == '*')
+		return (1);
+	if (format[i] == '*')
 	{
 		data->pre = va_arg(ap, int);
 		if (data->pre < 0)
 			data->pre = -1;
-		i++;
 		return(i);
 	}
-	else if (format[i + 1] >= '0' && format[i + 1] <= '9')
+	else if (format[i] >= '0' && format[i] <= '9')
 	{
-		while (format[i + 1] >= '0' && format[i + 1] <= '9')
+		while (format[i] >= '0' && format[i] <= '9')
 		{
-			data->pre = data->pre * 10 + format[i + 1] - '0';
+			data->pre = data->pre * 10 + format[i] - '0';
 			i++;
 		}
+		i--;
 	}
 	return (i);
 }
@@ -51,7 +51,7 @@ int			format_check(char *format, va_list ap, fmtdata *data)
 	while (format[i] && ft_f(format[i]))
 	{
 		if (format[i] == '%')
-			i += ft_putchar('%', data);
+			ft_putchar('%', data);
 		else if (format[i] == '0' && !data->width && !data->minus)
 			data->zero = 1;
 		else if (format[i] == '-')

@@ -5,6 +5,10 @@ void	ft_putwidth(fmtdata *data, int size)
 	int	i;
 
 	i = size;
+	if (data->pre > i)
+		i = data->pre;
+	if (data->pre >= 0 && data->pre < i)
+		i = data->pre;
 	while (data->width > i)
 	{
 		if (data->zero)
