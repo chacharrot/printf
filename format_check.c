@@ -50,8 +50,6 @@ int			format_check(char *format, va_list ap, fmtdata *data)
 	i = 1;
 	while (format[i] && ft_f(format[i]))
 	{
-		if (format[i] == '%')
-			ft_putchar('%', data);
 		else if (format[i] == '0' && !data->width && !data->minus)
 			data->zero = 1;
 		else if (format[i] == '-')
