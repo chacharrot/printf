@@ -63,7 +63,7 @@ void	do_p(va_list ap, fmtdata *data)
 	if (data->minus)
 		ft_putstr_p(number, data, num_size);
 	if (data->width && (data->pre != -1 || !data->zero || !data->int_minus))
-		ft_putwidth_p(data);
+		ft_putwidth_p(data, num_size);
 	if (!data->minus)
 		ft_putstr_p(number, data, num_size);
 }
