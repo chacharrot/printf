@@ -40,12 +40,12 @@ void	ft_putwidth_d(fmtdata *data, int size)
 	}
 }
 
-void	ft_putwidth_p(fmtdata *data)
+void	ft_putwidth_p(fmtdata *data, int str_len)
 {
 	int	i;
 
-	i = 9;
-	if (data->pre > 9)
+	i = str_len;
+	if (data->pre > str_len)
 		i = data->pre;
 	while (data->width > i + 2)
 	{
@@ -58,7 +58,7 @@ void	ft_putwidth_p(fmtdata *data)
 	}
 }
 
-void	ft_putwidth_per(fmtdata *data, int size)
+void	ft_putwidth_cper(fmtdata *data, int size)
 {
 	
 	while (data->width > size)

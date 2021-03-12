@@ -18,8 +18,6 @@ void	data_set(fmtdata *data)
 
 int		ft_f(char format)
 {
-	if (format == '%')
-		return (1);
 	if (format == '0')
 		return (1);
 	if (format == '-')

@@ -41,9 +41,9 @@ void	do_X(va_list ap, fmtdata *data)
 void	do_percent(va_list ap, fmtdata *data)
 {
 	if (data->minus)
-		ft_putchar('%');
+		ft_putchar('%', data);
 	if (data->width)
-		ft_putwidth(data, 1);
+		ft_putwidth_cper(data, 1);
 	if (!data->minus)
-		ft_putchar('%');
+		ft_putchar('%', data);
 }

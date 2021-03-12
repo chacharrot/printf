@@ -4,6 +4,8 @@ int	do_print(char *format, va_list ap, fmtdata *data)
 {
 	if (*format == '\0')
 		return (0);
+	if (*format == '%')
+		do_percent(ap, data);
 	if (*format == 'c')
 		do_c(ap, data);
 	if (*format == 's')
@@ -14,6 +16,8 @@ int	do_print(char *format, va_list ap, fmtdata *data)
 		do_u(ap, data);
 	if (*format == 'x')
 		do_x(ap, data);
+	if (*format == 'X')
+		do_X(ap, data);
 	if (*format == 'p')
 		do_p(ap, data);
 	return (1);

@@ -23,10 +23,10 @@ void	ft_putstr_p(char *str, fmtdata *data, int str_len)
 	write(1, "0x", 2);
 	data->rev += 2;
 	if (data->pre == -1 && data->zero)
-		ft_putwidth_p(data);
+		ft_putwidth_p(data, str_len);
 	i = data->pre;
-	if (data->pre > str_len + 2)
-		while (i-- > str_len + 2)
+	if (data->pre > str_len)
+		while (i-- > str_len)
 			ft_putchar('0', data);
 	write(1, str, str_len);
 	data->rev += str_len;

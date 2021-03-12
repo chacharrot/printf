@@ -74,6 +74,7 @@ char	*ft_itoa_hex(size_t num, char format, fmtdata *data)
 		return (str);
 	}
 	str = (char *)malloc(sizeof(char) * (i + 1));
+	str[i] = '\0';
 	nbr = num;
 	while (i--)
 	{
@@ -89,7 +90,7 @@ char	*ft_itoa_p(unsigned long long num, fmtdata *data)
 	char				*str;
 	int					i;
 
-	base = "0123456789ABCDEF";
+	base = "0123456789abcdef";
 	i = digitnumber_p(num);
 	if (num == 0 && data->pre == 0)
 	{
