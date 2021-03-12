@@ -38,7 +38,7 @@ void	do_X(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_percent(va_list ap, fmtdata *data)
+void	do_percent(fmtdata *data)
 {
 	if (data->minus)
 		ft_putchar('%', data);
