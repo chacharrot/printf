@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putwidth.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scha <scha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 22:32:11 by scha              #+#    #+#             */
+/*   Updated: 2021/03/15 22:33:45 by scha             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_putwidth(fmtdata *data, int size)
@@ -60,7 +72,6 @@ void	ft_putwidth_p(fmtdata *data, int str_len)
 
 void	ft_putwidth_cper(fmtdata *data, int size)
 {
-	
 	while (data->width > size)
 	{
 		if (data->zero)

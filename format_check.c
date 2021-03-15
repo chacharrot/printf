@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   format_check.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scha <scha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 22:33:54 by scha              #+#    #+#             */
+/*   Updated: 2021/03/15 22:37:19 by scha             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static void 	data_minus(fmtdata *data)
+static void		data_minus(fmtdata *data)
 {
 	data->minus = 1;
 	data->zero = 0;
@@ -31,7 +43,7 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 		if (data->pre < 0)
 			data->pre = -1;
 		i++;
-		return(i);
+		return (i);
 	}
 	else if (format[i + 1] >= '0' && format[i + 1] <= '9')
 	{
@@ -44,7 +56,7 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 	return (i);
 }
 
-int			format_check(char *format, va_list ap, fmtdata *data)
+int				format_check(char *format, va_list ap, fmtdata *data)
 {
 	int i;
 
@@ -70,7 +82,7 @@ int			format_check(char *format, va_list ap, fmtdata *data)
 	return (i);
 }
 
-void		format_start(char *format, va_list ap, fmtdata *data)
+void			format_start(char *format, va_list ap, fmtdata *data)
 {
 	int		i;
 
@@ -81,12 +93,12 @@ void		format_start(char *format, va_list ap, fmtdata *data)
 		data_set(data);
 		if (format[i] != '%')
 			i += ft_putchar(format[i], data);
-		else if(format[i] == '%')
-			{
-				if (format [i + 1] == '\0')
-					break ;
-				i += format_check(&format[i], ap, data);
-				i += do_print(&format[i], ap, data);
-			}
+		else if (format[i] == '%')
+		{
+			if (format[i + 1] == '\0')
+				break ;
+			i += format_check(&format[i], ap, data);
+			i += do_print(&format[i], ap, data);
+		}
 	}
 }

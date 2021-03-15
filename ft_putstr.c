@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scha <scha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 22:29:12 by scha              #+#    #+#             */
+/*   Updated: 2021/03/15 22:30:04 by scha             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_putstr_d(char *str, fmtdata *data, int str_len)
@@ -43,4 +55,3 @@ void	ft_putstr(char *str, fmtdata *data, int str_len)
 	write(1, str, str_len);
 	data->rev += str_len;
 }
-

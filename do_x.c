@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_x.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scha <scha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 22:30:29 by scha              #+#    #+#             */
+/*   Updated: 2021/03/15 22:31:01 by scha             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	do_x(va_list ap, fmtdata *data)
@@ -19,7 +31,7 @@ void	do_x(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_X(va_list ap, fmtdata *data)
+void	do_bigx(va_list ap, fmtdata *data)
 {
 	size_t	num;
 	char	*number;

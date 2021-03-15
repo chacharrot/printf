@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   do_format.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scha <scha@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 21:58:38 by scha              #+#    #+#             */
+/*   Updated: 2021/03/15 21:59:22 by scha             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	do_c(va_list ap, fmtdata *data)
@@ -28,7 +40,6 @@ void	do_d(va_list ap, fmtdata *data)
 	if (!data->minus)
 		ft_putstr_d(number, data, num_size);
 }
-
 
 void	do_u(va_list ap, fmtdata *data)
 {
@@ -82,11 +93,11 @@ int		do_s(va_list ap, fmtdata *data)
 	str_len = ft_strlen(str);
 	if (data->pre > str_len)
 		data->pre = str_len;
-	if(data->minus)
+	if (data->minus)
 		ft_putstr(str, data, str_len);
-	if(data->width)
+	if (data->width)
 		ft_putwidth(data, str_len);
-	if(!data->minus)
+	if (!data->minus)
 		ft_putstr(str, data, str_len);
 	return (1);
 }
