@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-int		ft_putchar(char c, fmtdata *data)
+int		ft_putchar(char c, t_fmtdata *data)
 {
 	write(1, &c, 1);
 	data->rev += 1;
 	return (1);
 }
 
-void	data_set(fmtdata *data)
+void	data_set(t_fmtdata *data)
 {
 	data->width = 0;
 	data->pre = -1;

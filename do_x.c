@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	do_x(va_list ap, fmtdata *data)
+void	do_x(va_list ap, t_fmtdata *data)
 {
 	size_t	num;
 	char	*number;
@@ -31,7 +31,7 @@ void	do_x(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_bigx(va_list ap, fmtdata *data)
+void	do_bigx(va_list ap, t_fmtdata *data)
 {
 	size_t	num;
 	char	*number;
@@ -50,7 +50,7 @@ void	do_bigx(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_percent(fmtdata *data)
+void	do_percent(t_fmtdata *data)
 {
 	if (data->minus)
 		ft_putchar('%', data);

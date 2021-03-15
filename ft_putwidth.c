@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_putwidth(fmtdata *data, int size)
+void	ft_putwidth(t_fmtdata *data, int size)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ void	ft_putwidth(fmtdata *data, int size)
 	}
 }
 
-void	ft_putwidth_d(fmtdata *data, int size)
+void	ft_putwidth_d(t_fmtdata *data, int size)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ void	ft_putwidth_d(fmtdata *data, int size)
 	}
 }
 
-void	ft_putwidth_p(fmtdata *data, int str_len)
+void	ft_putwidth_p(t_fmtdata *data, int str_len)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ void	ft_putwidth_p(fmtdata *data, int str_len)
 	}
 }
 
-void	ft_putwidth_cper(fmtdata *data, int size)
+void	ft_putwidth_cper(t_fmtdata *data, int size)
 {
 	while (data->width > size)
 	{

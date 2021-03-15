@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	do_c(va_list ap, fmtdata *data)
+void	do_c(va_list ap, t_fmtdata *data)
 {
 	if (data->minus)
 		ft_putchar(va_arg(ap, int), data);
@@ -22,7 +22,7 @@ void	do_c(va_list ap, fmtdata *data)
 		ft_putchar(va_arg(ap, int), data);
 }
 
-void	do_d(va_list ap, fmtdata *data)
+void	do_d(va_list ap, t_fmtdata *data)
 {
 	char	*number;
 	int		num_size;
@@ -41,7 +41,7 @@ void	do_d(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_u(va_list ap, fmtdata *data)
+void	do_u(va_list ap, t_fmtdata *data)
 {
 	size_t	num;
 	char	*number;
@@ -60,7 +60,7 @@ void	do_u(va_list ap, fmtdata *data)
 		ft_putstr_d(number, data, num_size);
 }
 
-void	do_p(va_list ap, fmtdata *data)
+void	do_p(va_list ap, t_fmtdata *data)
 {
 	unsigned long long	num;
 	char				*number;
@@ -79,7 +79,7 @@ void	do_p(va_list ap, fmtdata *data)
 		ft_putstr_p(number, data, num_size);
 }
 
-int		do_s(va_list ap, fmtdata *data)
+int		do_s(va_list ap, t_fmtdata *data)
 {
 	char	*str;
 	int		str_len;

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_putstr_d(char *str, fmtdata *data, int str_len)
+void	ft_putstr_d(char *str, t_fmtdata *data, int str_len)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ void	ft_putstr_d(char *str, fmtdata *data, int str_len)
 	data->rev += str_len;
 }
 
-void	ft_putstr_p(char *str, fmtdata *data, int str_len)
+void	ft_putstr_p(char *str, t_fmtdata *data, int str_len)
 {
 	int		i;
 
@@ -44,7 +44,7 @@ void	ft_putstr_p(char *str, fmtdata *data, int str_len)
 	data->rev += str_len;
 }
 
-void	ft_putstr(char *str, fmtdata *data, int str_len)
+void	ft_putstr(char *str, t_fmtdata *data, int str_len)
 {
 	if (str == NULL)
 		return ;

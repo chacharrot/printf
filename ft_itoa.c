@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_itoa(int num, fmtdata *data)
+char	*ft_itoa(int num, t_fmtdata *data)
 {
 	char			*str;
 	int				i;
@@ -41,7 +41,7 @@ char	*ft_itoa(int num, fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_u(size_t num, fmtdata *data)
+char	*ft_itoa_u(size_t num, t_fmtdata *data)
 {
 	char			*str;
 	int				i;
@@ -67,7 +67,7 @@ char	*ft_itoa_u(size_t num, fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_hex(size_t num, char format, fmtdata *data)
+char	*ft_itoa_hex(size_t num, char format, t_fmtdata *data)
 {
 	char			*base;
 	char			*str;
@@ -96,7 +96,7 @@ char	*ft_itoa_hex(size_t num, char format, fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_p(unsigned long long num, fmtdata *data)
+char	*ft_itoa_p(unsigned long long num, t_fmtdata *data)
 {
 	char				*base;
 	char				*str;

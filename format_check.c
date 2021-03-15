@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-static void		data_minus(fmtdata *data)
+static void		data_minus(t_fmtdata *data)
 {
 	data->minus = 1;
 	data->zero = 0;
 }
 
-static void		data_width(va_list ap, fmtdata *data)
+static void		data_width(va_list ap, t_fmtdata *data)
 {
 	data->width = va_arg(ap, int);
 	if (data->width < 0)
@@ -29,7 +29,7 @@ static void		data_width(va_list ap, fmtdata *data)
 	}
 }
 
-static int		pre_check(char *format, va_list ap, fmtdata *data)
+static int		pre_check(char *format, va_list ap, t_fmtdata *data)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ static int		pre_check(char *format, va_list ap, fmtdata *data)
 	return (i);
 }
 
-int				format_check(char *format, va_list ap, fmtdata *data)
+int				format_check(char *format, va_list ap, t_fmtdata *data)
 {
 	int i;
 
@@ -82,7 +82,7 @@ int				format_check(char *format, va_list ap, fmtdata *data)
 	return (i);
 }
 
-void			format_start(char *format, va_list ap, fmtdata *data)
+void			format_start(char *format, va_list ap, t_fmtdata *data)
 {
 	int		i;
 
