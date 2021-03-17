@@ -55,10 +55,8 @@ char	*ft_itoa_u(size_t num, t_fmtdata *data)
 		return (str);
 	}
 	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
-		return (NULL);
-	else
-		nbr = num;
+	str[i] = '\0';
+	nbr = num;
 	while (i--)
 	{
 		str[i] = nbr % 10 + '0';

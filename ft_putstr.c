@@ -26,6 +26,7 @@ void	ft_putstr_d(char *str, t_fmtdata *data, int str_len)
 			ft_putchar('0', data);
 	write(1, str, str_len);
 	data->rev += str_len;
+	free(str);
 }
 
 void	ft_putstr_p(char *str, t_fmtdata *data, int str_len)
@@ -42,6 +43,7 @@ void	ft_putstr_p(char *str, t_fmtdata *data, int str_len)
 			ft_putchar('0', data);
 	write(1, str, str_len);
 	data->rev += str_len;
+	free(str);
 }
 
 void	ft_putstr(char *str, t_fmtdata *data, int str_len)
@@ -54,4 +56,5 @@ void	ft_putstr(char *str, t_fmtdata *data, int str_len)
 		data->pre = str_len;
 	write(1, str, str_len);
 	data->rev += str_len;
+	free(str);
 }
