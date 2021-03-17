@@ -56,5 +56,4 @@ void	ft_putstr(char *str, t_fmtdata *data, int str_len)
 		data->pre = str_len;
 	write(1, str, str_len);
 	data->rev += str_len;
-	free(str);
 }
