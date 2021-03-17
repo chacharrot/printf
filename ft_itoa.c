@@ -12,7 +12,16 @@
 
 #include "ft_printf.h"
 
-char	*ft_itoa(int num, t_fmtdata *data)
+static char	*maloc_str(int i)
+{
+	char			*str;
+
+	str  = malloc(i + 1);
+	str[i] = '\0';
+	return (str);
+}
+
+char		*ft_itoa(int num, t_fmtdata *data)
 {
 	char			*str;
 	int				i;
@@ -25,7 +34,7 @@ char	*ft_itoa(int num, t_fmtdata *data)
 		str[0] = '\0';
 		return (str);
 	}
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = maloc_str(i);
 	if (num < 0)
 	{
 		nbr = (unsigned int)(num * -1);
@@ -41,7 +50,7 @@ char	*ft_itoa(int num, t_fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_u(size_t num, t_fmtdata *data)
+char		*ft_itoa_u(size_t num, t_fmtdata *data)
 {
 	char			*str;
 	int				i;
@@ -65,7 +74,7 @@ char	*ft_itoa_u(size_t num, t_fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_hex(size_t num, char format, t_fmtdata *data)
+char		*ft_itoa_hex(size_t num, char format, t_fmtdata *data)
 {
 	char			*base;
 	char			*str;
@@ -83,7 +92,7 @@ char	*ft_itoa_hex(size_t num, char format, t_fmtdata *data)
 		str[0] = '\0';
 		return (str);
 	}
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = malloc(i + 1);
 	str[i] = '\0';
 	nbr = num;
 	while (i--)
@@ -94,7 +103,7 @@ char	*ft_itoa_hex(size_t num, char format, t_fmtdata *data)
 	return (str);
 }
 
-char	*ft_itoa_p(unsigned long long num, t_fmtdata *data)
+char		*ft_itoa_p(unsigned long long num, t_fmtdata *data)
 {
 	char				*base;
 	char				*str;
