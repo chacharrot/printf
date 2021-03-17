@@ -16,7 +16,7 @@ static char	*maloc_str(int i)
 {
 	char			*str;
 
-	str  = malloc(i + 1);
+	str = malloc(i + 1);
 	str[i] = '\0';
 	return (str);
 }
