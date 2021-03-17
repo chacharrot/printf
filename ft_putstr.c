@@ -21,8 +21,8 @@ void	ft_putstr_d(char *str, t_fmtdata *data, int str_len)
 	if (data->pre == -1 && data->zero && data->int_minus)
 		ft_putwidth_d(data, str_len);
 	i = data->pre;
-	if (data->pre > (int)str_len)
-		while (i-- - (int)str_len > 0)
+	if (data->pre > str_len)
+		while (i-- - str_len > 0)
 			ft_putchar('0', data);
 	write(1, str, str_len);
 	data->rev += str_len;
