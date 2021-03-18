@@ -86,10 +86,7 @@ int		do_s(va_list ap, t_fmtdata *data)
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
-	{
-		str = malloc(7);
 		str = "(null)";
-	}
 	str_len = ft_strlen(str);
 	if (data->pre > str_len)
 		data->pre = str_len;
