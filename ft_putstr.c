@@ -48,8 +48,6 @@ void	ft_putstr_p(char *str, t_fmtdata *data, int str_len)
 
 void	ft_putstr(char *str, t_fmtdata *data, int str_len)
 {
-	if (str == NULL)
-		return ;
 	if (data->pre >= 0 && data->pre < str_len)
 		str_len = data->pre;
 	if (data->pre > str_len)
